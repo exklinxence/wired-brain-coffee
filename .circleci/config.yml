@@ -7,9 +7,13 @@ jobs:
     steps:
       - checkout
       
+      - run:
+          name: Build Dependencied
+          command: bundle install
+      
       - run: 
-          name: greeting
-          command: echo Hello, World.
+          name: Bundle the jekyll site
+          command: bundle exec jekyll build
         
       - run:
           name: print the date time
